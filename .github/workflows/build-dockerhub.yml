@@ -8,14 +8,14 @@ on:
       - 'v*'
   schedule:
     - cron: "09 09 * * 1"
+env:
+  DOCKER_IMAGE: kamalyes/drawio
+  HTTP_PORT: 8080
+  HTTPS_PORT: 8443
 
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
-    env:
-      DOCKER_IMAGE: kamalyes/drawio
-      HTTP_PORT: 8080
-      HTTPS_PORT: 8443
     steps:
       - name: Checkout
         uses: actions/checkout@v3
